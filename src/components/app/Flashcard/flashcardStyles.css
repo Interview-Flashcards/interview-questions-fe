@@ -1,0 +1,44 @@
+.flashcard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid green;
+  border-radius: 5px;
+  width: 50%;
+  height: 25%;
+  padding: 10%;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  margin-top: 10%;
+  padding: 5%;
+}
+
+.linksDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+  font-size: 8%;
+  padding-top: 5%;
+}
+
+.linkItem {
+  text-decoration: none;
+  color: green;
+}
+
+.hintVisible {
+  display: visible;
+}
+
+.answerVisible {
+  display: visible;
+}
