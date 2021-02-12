@@ -8,21 +8,21 @@ export default function Flashcard({ id, question, answer, hint, category, tags, 
   return (
     <div className={flashcardStyles.flashcard}>
 
-      <h2>{question}</h2>
+      <h2 className={flashcardStyles.question}>{question}</h2>
 
       <button className={flashcardStyles.hintButton}>Show Hint</button>
 
       <div className={flashcardStyles.hint}>
         <div>{hint}
         
-        <div className={flashcardStyles.linksDiv}>
+          <div className={flashcardStyles.linksDiv}>
           Links: 
-          {links.map(link => {
-            return (
-              <LinkItem url={link} />
-            )
-          })}
-        </div>
+            {links.map(link => {
+              return (
+                <LinkItem url={link} />
+              );
+            })}
+          </div>
 
         </div>
       </div>
@@ -33,5 +33,5 @@ export default function Flashcard({ id, question, answer, hint, category, tags, 
         <p>{answer}</p>
       </div>
     </div>
-  )
+  );
 }
