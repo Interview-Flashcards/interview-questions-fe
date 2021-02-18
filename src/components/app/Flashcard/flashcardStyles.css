@@ -60,10 +60,6 @@ body {
   color: green;
 }
 
-.hintVisible {
-  display: visible;
-}
-
-.answerVisible {
-  display: visible;
+.hidden {
+  display: none;
 }
