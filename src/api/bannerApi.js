@@ -1,15 +1,14 @@
-export function getTagList(flashCards) {
-
-const possibleTagList = ['All'];
-
-  function isItemInArray(array, item) {
-    for(let i = 0; i < array.length; i++) {
-      if(item === array[i]) {
-        return true;
-      }
+export function isItemInArray(array, item) {
+  for(let i = 0; i < array.length; i++) {
+    if(item === array[i]) {
+      return true;
     }
-    return false;
   }
+  return false;
+}
+
+export function getTagList(flashCards) {
+const possibleTagList = ['All'];
 
   for(let i = 0; i < flashCards.length; i++) {
     const currentFlashCard = flashCards[i];
@@ -26,3 +25,5 @@ const possibleTagList = ['All'];
   return possibleTagList;
 
 };
+
+
