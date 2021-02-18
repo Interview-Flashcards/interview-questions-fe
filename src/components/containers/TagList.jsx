@@ -7,7 +7,6 @@ export default function TagList() {
 
   function handleTagChange(newValue) {
     setChosenTag(newValue);
-    console.log('tag change', newValue);
   }
 
   return (
