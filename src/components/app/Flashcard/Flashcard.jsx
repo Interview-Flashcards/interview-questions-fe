@@ -1,45 +1,26 @@
 import React from 'react';
-import styles from '../../../styles/styles.css';
 import flashcardStyles from './flashcardStyles.css';
-import LinkItem from '../LinkItem/LinkItem';
+import Hint from './Hint';
+import Answer from './Answer';
+import PropTypes from 'prop-types';
 
-export default function Flashcard() {
-  const testData = {
-    question: 'In JavaScript what is the difference between null and undefined?',
-    answer: 'null is an explicit nothing and has a typeof object, undefined has been declared and not yet assigned and has a typeof undefined. null == undefined //true. null === undefined //false',
-    hint: 'One is automatically applied when something is forgotten, the other is intentional.',
-    category: 'tech',
-    tags: ['JavaScript', 'FrontEndBackEnd'],
-    links: ['https://www.youtube.com/watch?v=QVt0XfnU2Hw', 'https://stackoverflow.com/questions/5076944/what-is-the-difference-between-null-and-undefined-in-javascript']
-  }
+export default function Flashcard({ id, question, answer, hint, category, tags, links }) {
 
   return (
     <div className={flashcardStyles.flashcard}>
-
-      <h2>{testData.question}</h2>
-
-      <button className={flashcardStyles.hintButton}>Show Hint</button>
-
-      <div className={flashcardStyles.hint}>
-        <div>{testData.hint}
-        
-        <div className={flashcardStyles.linksDiv}>
-          Links: 
-          {testData.links.map(link => {
-            return (
-              <LinkItem url={link} />
-            )
-          })}
-        </div>
-
-        </div>
-      </div>
-
-      <button className={flashcardStyles.button}>Show Answer</button>
-
-      <div className={flashcardStyles.answer}>
-        <p>{testData.answer}</p>
-      </div>
+      <h2 className={flashcardStyles.question}>{question}</h2>
+      <Hint hint={hint} links={links}/>
+      <Answer answer={answer} />
     </div>
-  )
+  );
 }
+
+Flashcard.propTypes = {
+  id: PropTypes.string,
+  question: PropTypes.string,
+  answer: PropTypes.string,
+  hint: PropTypes.string,
+  category: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  links: PropTypes.arrayOf(PropTypes.string)
+};

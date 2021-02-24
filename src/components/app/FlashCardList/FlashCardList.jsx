@@ -1,19 +1,28 @@
 import React from 'react';
 import { useFlashCards } from '../../../hooks/flashCards';
 import Flashcard from '../Flashcard/Flashcard';
+import { isItemInArray } from '../../../api/bannerApi';
 
-export default function FlashCardList() {
-    const { flashCards } = useFlashCards();
+export default function FlashCardList({ chosenTag }) {
+  const { flashCards } = useFlashCards();
 
-    const flashCardsElements = flashCards.map(flashCard => (
-        <div key={flashCard.id}>
-            <Flashcard {...flashCard} />
-        </div>
+  const allFlashCardElements = flashCards.filter(flashCard => flashCard.tags !== [])
+    .map(flashCard => (
+      <div key={flashCard.id}>
+        <Flashcard {...flashCard} />
+      </div>
     ));
 
-    return (
-        <div>
-            {flashCardsElements}
+  const flashCardElements = flashCards.filter(flashCard => isItemInArray(flashCard.tags, chosenTag))
+    .map(flashCard => (
+        <div key={flashCard.id}>
+          <Flashcard {...flashCard} />
         </div>
-    );
-};
+      ));
+
+  return (
+    <div>
+      {chosenTag === 'All' ? allFlashCardElements : flashCardElements}
+    </div>
+  );
+}
