@@ -51,15 +51,42 @@ body {
   justify-content: center;
   margin: auto;
   width: 80%;
-  font-size: 8%;
   padding-top: 5%;
 }
 
 .linkItem {
   text-decoration: none;
-  color: green;
+  color: blue;
+  font-size: .5em;
+  padding-bottom: 2%;
 }
 
 .hidden {
   display: none;
+}
+
+.hint, .answer {
+  margin: 5% auto;
+  padding: 3%;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px var(--color-shadow);
+  background-color: rgb(255, 255, 255, 0.3);
+}
+
+.hintDiv {
+  width: 100%;
+}
+
+button {
+  box-shadow: 2px 2px 4px var(--color-shadow);
+  margin-bottom: 5px;
+  width: 105px;
+  background: transparent;
+  border: 2px solid black;
+  outline: none;
+  padding: 2%;
+  height: 30px;
+  font-family: var(--font-header);
+  font-size: 0.5em;
 }

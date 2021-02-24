@@ -11,11 +11,11 @@ export default function Hint({ hint, links }) {
   }
 
   return (
-    <div>
-      <button onClick={showHint}>{hintInvisible ? 'Show Hint' : 'Hide Hint'}</button>
-      <div className={hintInvisible && flashcardStyles.hidden}>{hint}
-        <div>
-              Links:
+    <div className={flashcardStyles.hintDiv}>
+      <button onClick={showHint} className={flashcardStyles.hintButton}>{hintInvisible ? 'Show Hint' : 'Hide Hint'}</button>
+      <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
+        <div className={flashcardStyles.linksDiv}>
+          Links:
           {links.map(link => {
             return (
               <LinkItem key={link} url={link} />
