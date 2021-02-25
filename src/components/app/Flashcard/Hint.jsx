@@ -12,17 +12,23 @@ export default function Hint({ hint, links }) {
 
   return (
     <div className={flashcardStyles.hintDiv}>
-      <button onClick={showHint} className={flashcardStyles.hintButton}>{hintInvisible ? 'Show Hint' : 'Hide Hint'}</button>
-      <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
-        <div className={flashcardStyles.linksDiv}>
-          Links:
-          {links.map(link => {
-            return (
-              <LinkItem key={link} url={link} />
-            );
-          })}
-        </div>
-      </div>
+      {links.length === 0 && hint === '' ? null : <> 
+
+        <button onClick={showHint} className={flashcardStyles.hintButton}>{hintInvisible ? 'Show Hint' : 'Hide Hint'}</button>
+
+        <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
+          {links.length !== 0 && 
+            <div className={flashcardStyles.linksDiv}>
+              Links:
+              {links.map(link => {
+                return (
+                  <LinkItem key={link} url={link} />
+                );
+              })}
+            </div>
+          }
+        </div> 
+      </>}
     </div>
   );
 }
