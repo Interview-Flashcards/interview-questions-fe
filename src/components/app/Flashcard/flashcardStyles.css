@@ -6,17 +6,22 @@ body {
   --color1-transparent: rgba(131,58,180,.5);
   --color2: rgba(29,253,245,1);
   --color2-transparent: rgba(29,253,245,.5);
-  --color3: rgba(252,176,69,1);
+  --color3: rgb(128, 253, 216);
   --color3-transparent: rgba(252,176,69,.5);
   --color-shadow: rgb(100, 100, 100, .5);
-  --color-foreground: rgba(255, 255, 255,.5);
+  --color-foreground: rgb(247, 239, 222);
 
   --font-header: 'Lexend Mega', sans-serif;
   --font-body: 'Nunito Sans', sans-serif;
 
+  --banner-background: var(--color1);
+
   background: var(--color1);
   background: linear-gradient(0deg, var(--color1) 0%, var(--color2) 50%, var(--color3) 100%);
+}
 
+.flashcardList {
+  margin-top: 120px;
 }
 
 .flashcard {

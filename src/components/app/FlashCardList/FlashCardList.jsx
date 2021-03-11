@@ -2,6 +2,7 @@ import React from 'react';
 import { useFlashCards } from '../../../hooks/flashCards';
 import Flashcard from '../Flashcard/Flashcard';
 import { isItemInArray } from '../../../api/bannerApi';
+import flashcardStyles from '../Flashcard/flashcardStyles.css';
 
 export default function FlashCardList({ chosenTag }) {
   const { flashCards } = useFlashCards();
@@ -21,7 +22,7 @@ export default function FlashCardList({ chosenTag }) {
       ));
 
   return (
-    <div>
+    <div className={flashcardStyles.flashcardList}>
       {chosenTag === 'All' ? allFlashCardElements : flashCardElements}
     </div>
   );
