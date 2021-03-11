@@ -1,5 +1,10 @@
+const fetch = require('node-fetch');
+require('dotenv').config();
+
+const URL = process.env.REACT_APP_HEROKU_URL;
+
 export const getFlashCards = async() => {
-    const res = await fetch(process.env.REACT_APP_HEROKU_URL)
+    const res = await fetch(`${URL}`)
     const json = await res.json();
 
     if (!res.ok) throw 'Unable to load Cards';
