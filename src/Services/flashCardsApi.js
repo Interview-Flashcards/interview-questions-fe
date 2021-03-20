@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-require('dotenv').config();
+// require('dotenv').config();
 
 const URL = process.env.REACT_APP_HEROKU_URL;
 
