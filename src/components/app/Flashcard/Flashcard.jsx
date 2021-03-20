@@ -22,5 +22,5 @@ Flashcard.propTypes = {
   hint: PropTypes.string,
   category: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
-  links: PropTypes.arrayOf(PropTypes.string)
+  links: PropTypes.arrayOf(PropTypes.object)
 };
