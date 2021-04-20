@@ -10,7 +10,7 @@ export default function FlashCardList({ chosenTag }) {
 
   const allFlashCardElements = flashCards.filter(flashCard => flashCard.tags !== [])
     .map(flashCard => (
-      flashCard.category === 'code challenges' ?
+      flashCard.category === 'Code Challenges' ?
       <div key={flashCard.id}>
         <CodeChallengeFlashcard {...flashCard} />
       </div>
@@ -22,7 +22,7 @@ export default function FlashCardList({ chosenTag }) {
 
   const flashCardElements = flashCards.filter(flashCard => isItemInArray(flashCard.tags, chosenTag))
     .map(flashCard => (
-      flashCard.category === 'code challenges' ?
+      flashCard.category === 'Code Challenges' ?
       <div key={flashCard.id}>
         <CodeChallengeFlashcard {...flashCard} />
       </div>
