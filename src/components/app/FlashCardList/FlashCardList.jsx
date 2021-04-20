@@ -8,8 +8,9 @@ import CodeChallengeFlashcard from '../CodeChallengeFlashcard/CodeChallengeFlash
 export default function FlashCardList({ chosenTag }) {
   const { flashCards } = useFlashCards();
 
-  const allFlashCardElements = flashCards.filter(flashCard => flashCard.tags !== [])
-    .map(flashCard => (
+  const allFlashCards = flashCards.filter(flashCard => flashCard.tags.length > 0)
+    .map(flashCard => 
+      (
       flashCard.category === 'Code Challenges' ?
       <div key={flashCard.id}>
         <CodeChallengeFlashcard {...flashCard} />
@@ -20,7 +21,7 @@ export default function FlashCardList({ chosenTag }) {
       </div>
     ));
 
-  const flashCardElements = flashCards.filter(flashCard => isItemInArray(flashCard.tags, chosenTag))
+  const flashCardsByTag = flashCards.filter(flashCard => isItemInArray(flashCard.tags, chosenTag))
     .map(flashCard => (
       flashCard.category === 'Code Challenges' ?
       <div key={flashCard.id}>
@@ -34,7 +35,7 @@ export default function FlashCardList({ chosenTag }) {
 
   return (
     <div className={flashcardStyles.flashcardList}>
-      {chosenTag === 'All' ? allFlashCardElements : flashCardElements}
+      {chosenTag === 'All' ? allFlashCards : flashCardsByTag}
     </div>
   );
 }
