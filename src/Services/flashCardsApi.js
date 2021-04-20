@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-// require('dotenv').config();
 
 const URL = process.env.REACT_APP_HEROKU_URL;
 
@@ -7,7 +6,7 @@ export const getFlashCards = async() => {
     const res = await fetch(`${URL}`)
     const json = await res.json();
 
-    if (!res.ok) throw 'Unable to load Cards';
+    if (!res.ok) throw 'Unable to load cards';
 
     return json.map(flashCards => ({
       id: flashCards.id,
@@ -19,3 +18,4 @@ export const getFlashCards = async() => {
       links: flashCards.links   
     }));
 };
+

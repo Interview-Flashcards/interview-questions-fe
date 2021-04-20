@@ -20,9 +20,9 @@ export default function Hint({ hint, links }) {
           {links.length !== 0 && 
             <div className={flashcardStyles.linksDiv}>
               Reference Links:
-              {links.map(linkObject => {
+              {links.map(link => {
                 return (
-                  <LinkItem key={linkObject.linkName} url={linkObject.link} name={linkObject.linkName} />
+                  <LinkItem key={link.linkName} url={link.link} name={link.linkName} />
                 );
               })}
             </div>

@@ -22,5 +22,5 @@ export default function Answer({ answer }) {
 }
 
 Answer.propTypes = {
-  answer: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired
 };
