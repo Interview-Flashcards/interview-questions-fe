@@ -6,18 +6,25 @@ exports[`App component renders App 1`] = `
     class="wireframe appContainer"
   >
     <div
-      class="wireframe banner"
+      class="banner"
     >
       <h1>
         Interview Questions
       </h1>
-      <select>
-        <option
-          value="All"
-        >
-          All
-        </option>
-      </select>
+      <label
+        class="categoriesLabel"
+      >
+        <h3>
+          Categories:
+        </h3>
+        <select>
+          <option
+            value="All"
+          >
+            All
+          </option>
+        </select>
+      </label>
     </div>
     <div
       class="flashcardList"

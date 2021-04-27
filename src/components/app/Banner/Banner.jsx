@@ -14,15 +14,18 @@ export default function Banner({ chosenTag, onChange }) {
   }
 
   return (
-    <div className={`${styles.wireframe} ${bannerStyles.banner}`}>
+    <div className={bannerStyles.banner}>
       <h1>Interview Questions</h1>
-      <select onChange={handleTagChange} value={chosenTag}>
-        {
-          possibleTagList.map(tag => {
-            return(<option key={tag} value={tag}>{tag}</option>)
-          })
-        }
-      </select>
+      <label className={bannerStyles.categoriesLabel}>
+        <h3>Categories:</h3>
+        <select onChange={handleTagChange} value={chosenTag}>
+          {
+            possibleTagList.map(tag => {
+              return(<option key={tag} value={tag}>{tag}</option>)
+            })
+          }
+        </select>
+      </label>
     </div>
   );
 }

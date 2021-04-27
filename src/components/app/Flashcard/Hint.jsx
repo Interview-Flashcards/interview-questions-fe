@@ -19,7 +19,7 @@ export default function Hint({ hint, links }) {
         <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
           {links.length !== 0 && 
             <div className={flashcardStyles.linksDiv}>
-              Reference Links:
+              <h3>Reference Links:</h3>
               {links.map(link => {
                 return (
                   <LinkItem key={link.linkName} url={link.link} name={link.linkName} />
