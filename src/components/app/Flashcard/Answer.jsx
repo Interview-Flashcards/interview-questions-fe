@@ -10,15 +10,17 @@ export default function Answer({ answer }) {
   }
 
   return (
-    <div>
-      <button onClick={showAnswer}>{answerInvisible ? 'Show Answer' : 'Hide Answer'}</button>
-      <div className={answerInvisible ? flashcardStyles.hidden : flashcardStyles.answer}>
-        <p>{answer}</p>
-      </div>
+    <div className={flashcardStyles.answerDiv}>
+      {answer === '' ? null : <>
+        <button onClick={showAnswer}>{answerInvisible ? 'Show Answer' : 'Hide Answer'}</button>
+        <div className={answerInvisible ? flashcardStyles.hidden : flashcardStyles.answer}>
+          <p>{answer}</p>
+        </div>
+      </>}
     </div>
   );
 }
 
 Answer.propTypes = {
-  answer: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired
 };

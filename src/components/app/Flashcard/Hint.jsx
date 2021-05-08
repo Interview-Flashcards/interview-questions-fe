@@ -12,22 +12,28 @@ export default function Hint({ hint, links }) {
 
   return (
     <div className={flashcardStyles.hintDiv}>
-      <button onClick={showHint} className={flashcardStyles.hintButton}>{hintInvisible ? 'Show Hint' : 'Hide Hint'}</button>
-      <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
-        <div className={flashcardStyles.linksDiv}>
-          Links:
-          {links.map(link => {
-            return (
-              <LinkItem key={link} url={link} />
-            );
-          })}
-        </div>
-      </div>
+      {links.length === 0 && hint === '' ? null : <> 
+
+        <button onClick={showHint} className={flashcardStyles.hintButton}>{hintInvisible ? 'Show Hint' : 'Hide Hint'}</button>
+
+        <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
+          {links.length !== 0 && 
+            <div className={flashcardStyles.linksDiv}>
+              <h3>Reference Links:</h3>
+              {links.map(link => {
+                return (
+                  <LinkItem key={link.linkName} url={link.link} name={link.linkName} />
+                );
+              })}
+            </div>
+          }
+        </div> 
+      </>}
     </div>
   );
 }
 
 Hint.propTypes = {
   hint: PropTypes.string,
-  links: PropTypes.arrayOf(PropTypes.string)
+  links: PropTypes.arrayOf(PropTypes.object)
 };

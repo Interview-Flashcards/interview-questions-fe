@@ -3,6 +3,7 @@ import { useFlashCards } from '../../../hooks/flashCards';
 import styles from '../../../styles/styles.css';
 import PropTypes from 'prop-types';
 import { getTagList } from '../../../api/bannerApi';
+import bannerStyles from './bannerStyles.css';
 
 export default function Banner({ chosenTag, onChange }) {
   const { flashCards } = useFlashCards();
@@ -13,15 +14,18 @@ export default function Banner({ chosenTag, onChange }) {
   }
 
   return (
-    <div className={`${styles.wireframe} ${styles.banner}`}>
-      <h1>Banner</h1>
-      <select onChange={handleTagChange} value={chosenTag}>
-        {
-          possibleTagList.map(tag => {
-            return(<option key={tag} value={tag}>{tag}</option>)
-          })
-        }
-      </select>
+    <div className={bannerStyles.banner}>
+      <h1>Interview Questions</h1>
+      <label className={bannerStyles.categoriesLabel}>
+        <h3>Categories:</h3>
+        <select onChange={handleTagChange} value={chosenTag}>
+          {
+            possibleTagList.map(tag => {
+              return(<option key={tag} value={tag}>{tag}</option>)
+            })
+          }
+        </select>
+      </label>
     </div>
   );
 }
