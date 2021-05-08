@@ -19,10 +19,10 @@ export default function Hint({ hint, links }) {
         <div className={hintInvisible ? flashcardStyles.hidden : flashcardStyles.hint}>{hint}
           {links.length !== 0 && 
             <div className={flashcardStyles.linksDiv}>
-              Links:
+              <h3>Reference Links:</h3>
               {links.map(link => {
                 return (
-                  <LinkItem key={link} url={link} />
+                  <LinkItem key={link.linkName} url={link.link} name={link.linkName} />
                 );
               })}
             </div>
@@ -35,5 +35,5 @@ export default function Hint({ hint, links }) {
 
 Hint.propTypes = {
   hint: PropTypes.string,
-  links: PropTypes.arrayOf(PropTypes.string)
+  links: PropTypes.arrayOf(PropTypes.object)
 };

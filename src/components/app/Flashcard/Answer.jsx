@@ -10,7 +10,7 @@ export default function Answer({ answer }) {
   }
 
   return (
-    <div>
+    <div className={flashcardStyles.answerDiv}>
       {answer === '' ? null : <>
         <button onClick={showAnswer}>{answerInvisible ? 'Show Answer' : 'Hide Answer'}</button>
         <div className={answerInvisible ? flashcardStyles.hidden : flashcardStyles.answer}>
@@ -22,5 +22,5 @@ export default function Answer({ answer }) {
 }
 
 Answer.propTypes = {
-  answer: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired
 };

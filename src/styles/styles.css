@@ -1,8 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  --color1: rgba(131,58,180,1);
+  --color1-transparent: rgba(131,58,180,.5);
+  --color2: rgba(29,253,245,1);
+  --color2-transparent: rgba(29,253,245,.5);
+  --color3: rgb(128, 253, 216);
+  --color3-transparent: rgba(252,176,69,.5);
+  --color-shadow: rgb(100, 100, 100, .5);
+  --color-foreground: rgb(247, 239, 222);
+
+  --font-header: 'Lexend Mega', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
+
+  --banner-background: var(--color1);
+
+  background: var(--color1);
+  background: linear-gradient(0deg, var(--color1) 0%, var(--color2) 50%, var(--color3) 100%);
+}
+
 .appContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 97vh;
 }
+
+.loadingDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25%;
+  min-width: 80%;
+  font-size: 1.5em;
+}
+
 
 
