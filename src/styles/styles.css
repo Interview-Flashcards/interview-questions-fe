@@ -24,13 +24,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 97vh;
 }
 
 .loadingDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 25%;
-  margin: auto;
-  width: 150px;
+  min-width: 80%;
   font-size: 1.5em;
 }
 
