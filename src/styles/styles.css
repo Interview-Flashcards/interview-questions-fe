@@ -1,7 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
+@media all and (max-width: 700px) {
+  .appContainer {
+    background-size: 50%;
+  }
+}
+
 body {
+  --themeColor1: rgb(59, 72, 89);
+  --themeColor2: rgb(92, 115, 100);
+  --themeColor3: rgb(142, 166, 124);
+  --themeColor4: rgb(157, 191, 122);
+  --themeColor5: rgb(255, 252, 246, .9);
+
+
   --color1: rgba(131,58,180,1);
   --color1-transparent: rgba(131,58,180,.5);
   --color2: rgba(29,253,245,1);
@@ -15,9 +28,6 @@ body {
   --font-body: 'Nunito Sans', sans-serif;
 
   --banner-background: var(--color1);
-
-  background: var(--color1);
-  background: linear-gradient(0deg, var(--color1) 0%, var(--color2) 50%, var(--color3) 100%);
 }
 
 .appContainer {
@@ -26,6 +36,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 97vh;
+  background-image: url('../../public/assets/green-succulent.jpg');
+  background-size: 100%;
 }
 
 .loadingDiv {

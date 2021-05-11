@@ -15,17 +15,25 @@ export default function Banner({ chosenTag, onChange }) {
 
   return (
     <div className={bannerStyles.banner}>
-      <h1>Interview Questions</h1>
-      <label className={bannerStyles.categoriesLabel}>
-        <h3>Categories:</h3>
-        <select onChange={handleTagChange} value={chosenTag}>
-          {
-            possibleTagList.map(tag => {
-              return(<option key={tag} value={tag}>{tag}</option>)
-            })
-          }
-        </select>
-      </label>
+
+      <div className={bannerStyles.headerInfo}>
+
+      <h1>Welcome to IQ!</h1>
+        <p className={bannerStyles.description}>Interview Questions for Software Developers</p>
+        <label className={bannerStyles.categoriesLabel}>
+          <h3>Categories:</h3>
+          <select onChange={handleTagChange} value={chosenTag}>
+            {
+              possibleTagList.map(tag => {
+                return(<option key={tag} value={tag}>{tag}</option>)
+              })
+            }
+          </select>
+        </label>
+      </div>
+
+      <img src={'../../../public/assets/workspace.png'} className={bannerStyles.deskImage}></img>
+
     </div>
   );
 }

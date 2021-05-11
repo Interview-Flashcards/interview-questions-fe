@@ -1,6 +1,6 @@
 
 .flashcardList {
-  margin-top: 120px;
+  margin-top: 150px;
 }
 
 .flashcard, .linksDiv {
@@ -14,12 +14,12 @@
 .flashcard {
   margin: 20px auto 20px auto;
   box-shadow: 10px 5px 5px var(--color-shadow);
-  border-radius: 15px;
+  border: solid 5px var(--themeColor3);
   width: 65%;
   height: 25%;
   padding: 8%;
   font-family: var(--font-body);
-  background: var(--color-foreground);
+  background: var(--themeColor5);
 }
 
 .hidden {
@@ -61,7 +61,7 @@
 button {
   box-shadow: 2px 2px 2px var(--color-shadow);
   margin-bottom: 5px;
-  width: 105px;
+  width: 110px;
   background: transparent;
   border: 2px solid black;
   outline: none;

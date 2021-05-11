@@ -8,23 +8,36 @@ exports[`App component renders App 1`] = `
     <div
       class="banner"
     >
-      <h1>
-        Interview Questions
-      </h1>
-      <label
-        class="categoriesLabel"
+      <div
+        class="headerInfo"
       >
-        <h3>
-          Categories:
-        </h3>
-        <select>
-          <option
-            value="All"
-          >
-            All
-          </option>
-        </select>
-      </label>
+        <h1>
+          Welcome to IQ!
+        </h1>
+        <p
+          class="description"
+        >
+          Interview Questions for Software Developers
+        </p>
+        <label
+          class="categoriesLabel"
+        >
+          <h3>
+            Categories:
+          </h3>
+          <select>
+            <option
+              value="All"
+            >
+              All
+            </option>
+          </select>
+        </label>
+      </div>
+      <img
+        class="deskImage"
+        src="../../../public/assets/workspace.png"
+      />
     </div>
     <div
       class="loadingDiv"
@@ -38,7 +51,7 @@ exports[`App component renders App 1`] = `
       class="ScrollUpButton__Container "
       data-testid="react-scroll-up-button"
       role="button"
-      style="height: 27px; position: fixed; bottom: 20px; width: 27px; transition: all 0.5s ease-in-out; transition-property: opacity, right; cursor: pointer; opacity: 0; right: -75px; z-index: 1000; fill: var(--color1-transparent); padding-bottom: 1px; padding-left: 1px; padding-right: 1px; background: transparent; outline: none;"
+      style="height: 30px; position: fixed; bottom: 20px; width: 30px; transition: all 0.5s ease-in-out; transition-property: opacity, right; cursor: pointer; opacity: 0; right: -75px; z-index: 1000; fill: var(--themeColor2); padding-bottom: 1px; padding-left: 1px; padding-right: 1px; background: transparent; outline: none;"
       tabindex="-1"
     >
       <svg
